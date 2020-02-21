@@ -1,0 +1,10 @@
+diff a/Models/Manager.cs b/Models/Manager.cs	(rejected hunks)
+@@ -42,7 +42,7 @@
+ 
+         // ----------------- Parameters (XML serialisation)
+         /// <summary>Gets or sets the elements.</summary>
+-        [XmlAnyElement]
++        [XmlAnyElement(Name="Script")]
+         public XmlElement[] elements 
+         { 
+             get 

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WebKitGtkTest": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

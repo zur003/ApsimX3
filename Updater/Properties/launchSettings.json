@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Updater": {
+      "commandName": "Project",
+      "commandLineArgs": "a \"c:\\Program Files (x86)\\2018.more.stuff\""
+    }
+  }
+}

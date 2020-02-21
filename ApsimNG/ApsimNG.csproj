@@ -1,0 +1,135 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <ApplicationIcon />
+    <StartupObject />
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+    <OutputPath>D:\Projects\ApsimX3\Bin</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <DefineConstants>TRACE;SOURCEVIEW</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>D:\Projects\ApsimX3\Bin</OutputPath>
+    <DefineConstants>SOURCEVIEW</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Classes\Intellisense\**" />
+    <EmbeddedResource Remove="Classes\Intellisense\**" />
+    <None Remove="Classes\Intellisense\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Interfaces\IMethodCompletionView.cs" />
+    <Compile Remove="Presenters\AddFunctionPresenter.cs" />
+    <Compile Remove="Presenters\IntellisensePresenter.cs" />
+    <Compile Remove="Utility\Editor.cs" />
+    <Compile Remove="Utility\SoilDownloadDialogRevised.cs" />
+    <Compile Remove="Views\IntellisenseView.cs" />
+    <Compile Remove="Views\MethodCompletionView.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\**" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Resources\Icon1.ico" />
+    <EmbeddedResource Remove="Resources\Image1.png" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Remove="testonly" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.95.0-beta2" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.18" />
+    <PackageReference Include="MarkdownSharp" Version="2.0.5" />
+    <PackageReference Include="Microsoft.Azure.Batch" Version="12.0.0" />
+    <PackageReference Include="Microsoft.Azure.Common.Dependencies" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Azure.KeyVault.Core" Version="3.0.4" />
+    <PackageReference Include="Microsoft.Azure.Management.Batch" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="11.1.2" />
+    <PackageReference Include="Microsoft.Azure.Storage.Common" Version="11.1.2" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="3.4.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Scripting" Version="3.4.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic" Version="3.4.0" />
+    <PackageReference Include="Microsoft.DotNet.Analyzers.Compatibility" Version="0.2.12-alpha">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MonoMac.NetStandard" Version="0.0.4" />
+    <PackageReference Include="OxyPlot.Core" Version="2.0.0-unstable1104" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.112" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GtkSharp\Source\Libs\AtkSharp\AtkSharp.csproj" />
+    <ProjectReference Include="..\GtkSharp\Source\Libs\CairoSharp\CairoSharp.csproj" />
+    <ProjectReference Include="..\GtkSharp\Source\Libs\GdkSharp\GdkSharp.csproj" />
+    <ProjectReference Include="..\GtkSharp\Source\Libs\GioSharp\GioSharp.csproj" />
+    <ProjectReference Include="..\GtkSharp\Source\Libs\GLibSharp\GLibSharp.csproj" />
+    <ProjectReference Include="..\GtkSharp\Source\Libs\GtkSharp\GtkSharp.csproj" />
+    <ProjectReference Include="..\GtkSharp\Source\Libs\PangoSharp\PangoSharp.csproj" />
+    <ProjectReference Include="..\GtkSharp\Source\Libs\SourceView\SourceView.csproj" />
+    <ProjectReference Include="..\GtkSharp\Source\Libs\WebKit\WebKit.csproj" />
+    <ProjectReference Include="..\Models\Importer\Importer.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\Mono.Texteditor\Mono.TextEditor.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="OxyPlot.GtkSharp3">
+      <HintPath>..\..\..\3rdPartyProjects\oxyplot-gtksharp\Source\OxyPlot.GtkSharp3\bin\Debug\netcoreapp3.0\OxyPlot.GtkSharp3.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\3.0.0\ref\netcoreapp3.0\System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="webkit2-sharp">
+      <HintPath>..\..\ApsimX\ApsimNG - Gtk3\Assemblies\webkit2-sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Cloud\Settings1.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AzureSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Cloud\AzureSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

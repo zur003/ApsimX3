@@ -1,0 +1,20 @@
+﻿// -----------------------------------------------------------------------
+// <copyright file="Replacements.cs" company="APSIM Initiative">
+//     Copyright (c) APSIM Initiative
+// </copyright>
+//-----------------------------------------------------------------------
+namespace Models.Core
+{
+    using System;
+
+    /// <summary>
+    /// A replacements model
+    /// </summary>
+    [ValidParent(ParentType=typeof(Simulations))]
+    [Serializable]
+    [ScopedModel]
+    public class Replacements : Model
+    {
+
+    }
+}
